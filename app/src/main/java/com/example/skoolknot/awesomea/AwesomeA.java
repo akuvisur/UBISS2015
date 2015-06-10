@@ -76,6 +76,7 @@ public class AwesomeA extends ActionBarActivity {
     public void onResume() {
         super.onResume();
         edh = new EventDBHelper(getApplicationContext());
+        Log.d("DB", getApplicationContext().getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
     }
 
     // Listener for network events
