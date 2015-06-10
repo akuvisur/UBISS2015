@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.aware.Aware;
 import com.aware.Aware_Preferences;
@@ -79,6 +80,19 @@ public class AwesomeA extends ActionBarActivity {
         Log.d("DB", getApplicationContext().getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
     }
 
+    public void createNotification(View view) {
+        NotificationEmitter.emitDummyNotification(getApplicationContext());
+        Log.d("BUTTON", "click noti");
+    }
+
+    public void createToast(View view) {
+
+    }
+
+    public void createPopup(View view) {
+
+    }
+
     // Listener for network events
     private static NetworkListener nl = new NetworkListener();
     public static class NetworkListener extends BroadcastReceiver {
@@ -119,7 +133,7 @@ public class AwesomeA extends ActionBarActivity {
             else if (newstate.equals(Screen.ACTION_AWARE_SCREEN_OFF)) {
                 DataGatherer.screenOn = 0;
             }
-            Log.d("SCREEN", intent.getAction().toString());
+            Log.d("SCREEN", intent.getAction());
         }
     }
 
