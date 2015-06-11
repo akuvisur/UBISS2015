@@ -24,14 +24,37 @@ import com.aware.Screen;
 import com.aware.providers.Applications_Provider;
 import com.aware.providers.Communication_Provider;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 
 public class AwesomeA extends ActionBarActivity {
 
     private static ApplicationsObserver appObs;
-
+    public static Context c;
     public static EventDBHelper edh;
+
+    private final int interval = 5000; // 1 Second
+    private Handler handler = new Handler();
+    private Runnable runnable = new Runnable(){
+        public void run() {
+            AwesomeA.createDebugNotification();
+        }
+    };
+
+    public static ArrayList<String> debugApps = new ArrayList<String>(Arrays.asList("MessageApp", "MusicApp", "BrowserApp"));
+
+    private static void createDebugNotification() {
+        Random r = new Random();
+        int n = r.nextInt(2);
+        NotificationEmitter.createNotification(
+                c,
+                debugApps.get(n),
+                NotificationEmitter.generateDummyView(n),
+                NotificationEmitter.generateDummyIcon(n));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +93,21 @@ public class AwesomeA extends ActionBarActivity {
         actFilter.addAction("ACTION_AWARE_GOOGLE_ACTIVITY_RECOGNITION");
         registerReceiver(al, actFilter);
 
+        IntentFilter notificationFilter = new IntentFilter();
+        notificationFilter.addAction("notifications_pressed");
+        registerReceiver(nfl, notificationFilter);
+
         sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
+
+        handler.postAtTime(runnable, System.currentTimeMillis() + interval);
+        handler.postDelayed(runnable, interval);
     }
 
     @Override
     public void onResume() {
         super.onResume();
         edh = new EventDBHelper(getApplicationContext());
+        this.c = getApplicationContext();
         Log.d("DB", getApplicationContext().getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
     }
 
@@ -90,6 +121,14 @@ public class AwesomeA extends ActionBarActivity {
 
     public void createPopup(View view) {
         NotificationEmitter.emitDummmyPopup(getApplicationContext());
+    }
+
+    private static NotificationListener nfl = new NotificationListener();
+    public static class NotificationListener extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("NOTRESP", intent.getStringExtra("response"));
+        }
     }
 
     // Listener for network events

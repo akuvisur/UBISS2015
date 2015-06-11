@@ -75,13 +75,15 @@ public class NotificationEmitter {
 
         Intent okIntent = new Intent(c, null);
         okIntent.setAction("notifications_pressed");
-        okIntent.putExtra("notifications_accepted", "dummy_app");
+        okIntent.putExtra("response", "accepted");
+        okIntent.putExtra("appName", "dummy_app");
 
         PendingIntent pOkIntent = PendingIntent.getService(c, 0, okIntent, 0);
 
         Intent igIntent = new Intent(c, null);
         igIntent.setAction("notifications_pressed");
-        igIntent.putExtra("notifications_ignored", "dummy_app");
+        igIntent.putExtra("response", "ignored");
+        igIntent.putExtra("appName", "dummy_app");
 
         PendingIntent pIgIntent = PendingIntent.getService(c, 0, igIntent, 0);
 
@@ -147,4 +149,21 @@ public class NotificationEmitter {
         windowManager.addView(layout, params);
     }
 
+    public static Drawable generateDummyIcon(int n) {
+        return null;
+    }
+
+    public static View generateDummyView(int n) {
+        LayoutInflater inflater = (LayoutInflater) AwesomeA.c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.notification, null);
+
+        TextView appName = (TextView) layout.findViewById(R.id.appName);
+        ImageButton okb = (ImageButton) layout.findViewById(R.id.okButton);
+        ImageButton igb = (ImageButton) layout.findViewById(R.id.ignoreButton);
+
+        appName.setText(AwesomeA.debugApps.get(n));
+        okb.setImageResource(R.drawable.ok);
+        igb.setImageResource(R.drawable.ignore);
+        return layout;
+    }
 }
