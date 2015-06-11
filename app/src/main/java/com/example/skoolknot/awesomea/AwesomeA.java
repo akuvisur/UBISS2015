@@ -261,7 +261,8 @@ public class AwesomeA extends Activity {
         sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
     }
 
-    public static void getData() {
+    public static ArrayList<ArrayList<String>> getData() {
+        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
         // return all the data from database
         SQLiteDatabase db = edh.getReadableDatabase();
 
@@ -300,15 +301,20 @@ public class AwesomeA extends Activity {
         if(c != null && c.moveToFirst()) {
             while (c.moveToNext()) {
                 row = "";
+                ArrayList<String> rowList = new ArrayList<String>();
                 for (int i = 0; i < c.getColumnCount(); i++) {
                     row += " " + c.getString(i);
+                    rowList.add(c.getString(i));
                 }
                 Log.d("DB", row);
+                result.add(rowList);
             }
         }
 
+
         if(c != null && ! c.isClosed())
             c.close();
+        return result;
     }
 
     public static void storeEvent(HashMap<String, String> newValues, String appName, int response) {

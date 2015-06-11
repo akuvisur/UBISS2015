@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Aku\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.1.1\support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\support-annotations-22.1.1-e6cac265e55e19e70238fe12632f183499f066a5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6440e5e5cfe368f9bff3c537fb8988048069cb33">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-e0cb37e13713700ac351aa3fd2742012596ed7b9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba207be21987c11b37d9f8faa08ed6e722569f30">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-b3e69946b3757483ce755aa01eb0c5e3778fa2e5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.cocosw\undobar\1.8.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="35c14fe10219ef3467655a0b9cdbdb897f4ed914">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-5c928a054e0118b34d9fe92783ba3f0697139405.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f44d03c138cb6488fdbaa65e3a7e5878861a56d8">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-c11e8216d84fcb46c96244f5551644e82055a2f4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="68c140702c7242d914655bcb3164d9e8c45b84cb">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-8596fd67bcff3450fab479ee2bd44c6854a1edf5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="06a42becc33232ec0ee125161da68c1829c9f8fd">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-82435e9705087934b98e9ad816dc1dda375d87e1.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a78183f30e769a98ab4820794f597763088d3065">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-65b28518dd03c6cfbf0ad4109faebbbdc9758f03.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.awareframework\aware-core\3.4.4\jars\libs\org.eclipse.paho.client.mqttv3-1.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="11752d3f24d1a9deda4533a7ca18d8496417ceeb">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\org.eclipse.paho.client.mqttv3-1.0.2-6aa55200c484c9d985c162cfd3ccaab5949d0881.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a172852a35ff919e85b9b7f14bbc15c5bee25520">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-e0344b6c5c58c33b50cd4cd39a76d3f0f875cdcf.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8e3a972f28b8bae817e382257ba177a31bcadbbc">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-4c02480a2b2341a4c288dbbc33992ff363531d51.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6836d188602ec5382d1967c58b00960eb8ff8773">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-01cf649f798649679ce44133dff37895bb683a84.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1a6411087ab88ce5542f593e63a2752b6b0d6f1a">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-e0296f2cec32f5203b439186f77f197fbd6d1f0b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="63ec6e9f4fe5482a7447d0f3091b8e543a02554c">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-9934376e54d2d60ff452b4367e39f346c3df10ff.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a1372c17fccacca753d3951d3ad820571cbce075">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-7e7d7a2f8eb1600b837d312ef1db08ad0bfd1bf0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="272bc5d7063f24bc3a33ea1d318cde8f31f5ec4c">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-a2325606f7f9eb8f870db5d0f10884d92224f80a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-7b36e7777274361d90c1e80faf8ab3c947a78553.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e7b35244f50663b3f8d150714bca9ecd7a290da1">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-952f9ca9b22a5b1fe00cd57a82774d621c6a0eea.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="97f7e239e86ef994de894818fdd8a71d2e89d6aa">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-68620448dda75aa73535f067fc36bb7ef1db02f3.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\libs\internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1-cbc17b601b9b0e034207983fcffb807082a5f021.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f02127a85abd52a2cd526d4c2409f21969f80ee8">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-358585fc5a92187cc9bfed1d40fd241eac258866.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8d736fefa22d896e84a268354b3ed48a42663150">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-74efd953d4fe03bf0450d5dbfe3d83c755955660.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1e98ef3f124bb7a11f8575f9ff5dfea330b61b6f">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-de2d5e4eaab3e361d0e59b7e845abde867ca7fb6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="29ebc7e04d877062317c8cc0e68b20f0c1fcda66">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-eb96836b2a614d4058d4cef79bc68d1896aef616.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-63bb8602380c0784a43ddb67e375e032c2df08b4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.awareframework\aware-core\3.4.4\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5a6aedd034bb244c03aadd7fd770dd2a5dfbfc1e">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-cf78a74db8d2b0571a769b65f65e96d5e3c63cf2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69dd177337ead693c408c8dddc9546bb6f1244fa">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-fbf53993d13deed85f428477793e9410a2fce161.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d405025c600055237c171a0bbabaa49d69696573">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-7c50df3fd08024f1473dcef3dea15cb12694d840.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="02bac2dc792d78241077861566f2c82da955e7fa">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\classes-2e95e886b77d8e184ab7eb521e8e73c5a2eae1fe.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\22.0.0\jars\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ba3df4eb0a630d7de294f0e48d3f9267d279b784">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-1e0eefc4eea62b32c83ac9363e3bbb13c054c0a7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\exploded-aar\com.awareframework\aware-core\3.4.4\jars\libs\zbar.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0a7b88ba1496a0b4af76069ad40dacd3897149e0">
+        <dex dex="C:\Users\Aku\Android Studio Projects\UBISS2015\app\build\intermediates\pre-dexed\debug\zbar-fc469de5268d4b96b8501691b60e4d37ffc4c98e.jar" />
+    </item>
+
+</items>
