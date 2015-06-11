@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
  */
 public class EventDBHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "EventDB.db";
 
     private static final String TEXT_TYPE = " TEXT";
@@ -19,7 +19,7 @@ public class EventDBHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE IF NOT EXISTS " + EventEntry.TABLE_NAME + " (" +
                     EventEntry._ID + " INTEGER PRIMARY KEY," +
-                    EventEntry.COLUMN_NAME_APP_NAME + NUM_TYPE + COMMA_SEP +
+                    EventEntry.COLUMN_NAME_APP_NAME + TEXT_TYPE + COMMA_SEP +
                     EventEntry.COLUMN_NAME_RESPONSE + NUM_TYPE + " DEFAULT 0 "+ COMMA_SEP +
                     EventEntry.COLUMN_NAME_WIFI_STATE + NUM_TYPE + COMMA_SEP +
                     EventEntry.COLUMN_NAME_INTERNET_STATE + NUM_TYPE + COMMA_SEP +
@@ -41,8 +41,6 @@ public class EventDBHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_ENTRIES);
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // This database is only a cache for online data, so its upgrade policy is
-        // to simply to discard the data and start over
         db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
     }
@@ -56,7 +54,6 @@ public class EventDBHelper extends SQLiteOpenHelper {
         public static final String COLUMN_NAME_APP_NAME = "appName";
         public static final String COLUMN_NAME_RESPONSE = "response";
 
-
         public static final String COLUMN_NAME_WIFI_STATE = "wifiState";
         public static final String COLUMN_NAME_INTERNET_STATE = "internetState";
         public static final String COLUMN_NAME_LAST_APP = "lastApp";
@@ -66,4 +63,5 @@ public class EventDBHelper extends SQLiteOpenHelper {
         public static final String COLUMN_NAME_DAY = "day";
         public static final String COLUMN_NAME_ACTIVITY = "activity";
     }
+
 }

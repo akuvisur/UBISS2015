@@ -27,18 +27,18 @@ public class DataGatherer {
     public static Integer screenOn = 0;
     public static Integer activity = 3;
 
-    public static HashMap<String, Integer> getAllValues() {
-        HashMap<String, Integer> result = new HashMap<String, Integer>();
-        result.put("wifiState", wifiState);
-        result.put("internetState", internetState);
-        result.put("lastApp", usedApps.indexOf(lastApp));
-        result.put("screenOn", screenOn);
-        result.put("screenLocked", screenLocked);
+    public static HashMap<String, String> getAllValues() {
+        HashMap<String, String> result = new HashMap<String, String>();
+        result.put("wifiState", wifiState.toString());
+        result.put("internetState", internetState.toString());
+        result.put("lastApp", lastApp);
+        result.put("screenOn", screenOn.toString());
+        result.put("screenLocked", screenLocked.toString());
         Calendar cal = Calendar.getInstance();
 
-        result.put("hour", cal.get(Calendar.HOUR_OF_DAY));
-        result.put("day", cal.get(Calendar.DAY_OF_WEEK));
-        result.put("activity", activity);
+        result.put("hour", Integer.valueOf(cal.get(Calendar.HOUR_OF_DAY)).toString());
+        result.put("day", Integer.valueOf(cal.get(Calendar.DAY_OF_WEEK)).toString());
+        result.put("activity", activity.toString());
 
         return result;
     }

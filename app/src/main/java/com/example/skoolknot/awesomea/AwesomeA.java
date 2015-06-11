@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
@@ -36,9 +37,12 @@ public class AwesomeA extends Activity {
     // this seems very very stupid
     private static Activity thisActivity;
 
+    public static ArrayList<String> appList = new ArrayList<String>();
+
     private static ApplicationsObserver appObs;
     public static Context c;
     public static EventDBHelper edh;
+    public static AppsDBHelper adh;
     private static Handler h = new Handler();
 
     private final int interval = 15000; // 1 Second
@@ -104,9 +108,18 @@ public class AwesomeA extends Activity {
     public void onResume() {
         super.onResume();
         edh = new EventDBHelper(getApplicationContext());
+        adh = new AppsDBHelper(getApplicationContext());
         getData();
         this.c = getApplicationContext();
+        appList.clear();
+        getApps();
         Log.d("DB", getApplicationContext().getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        storeApps();
     }
 
     private static NotificationListener nfl = new NotificationListener();
@@ -236,6 +249,7 @@ public class AwesomeA extends Activity {
         unregisterReceiver(al);
         unregisterReceiver(sl);
         unregisterReceiver(nfl);
+        storeApps();
 
         Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_APPLICATIONS, false); // APPLICATIONS
         Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_CALLS, false); // CALLS
@@ -297,8 +311,7 @@ public class AwesomeA extends Activity {
             c.close();
     }
 
-    public static void storeEvent(HashMap<String, Integer> newValues, String appName, int response) {
-        Log.d("DB", AwesomeA.c.getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
+    public static void storeEvent(HashMap<String, String> newValues, String appName, int response) {
         SQLiteDatabase db = edh.getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
@@ -310,15 +323,59 @@ public class AwesomeA extends Activity {
         values.put(EventDBHelper.EventEntry.COLUMN_NAME_APP_NAME, appName);
         values.put(EventDBHelper.EventEntry.COLUMN_NAME_RESPONSE, response);
         // Insert the new row, returning the primary key value of the new row
-        db.insert(
+        if (appName != null) db.insert(
                 EventDBHelper.EventEntry.TABLE_NAME,
                 null,
                 values);
     }
 
+    private static void storeApps() {
+        SQLiteDatabase db = adh.getReadableDatabase();
+        ContentValues values = new ContentValues();
+        for (String appName : appList) {
+            values.clear();
+            values.put("appName", appName);
+            try {
+                db.insert(AppsDBHelper.AppEntry.TABLE_NAME,
+                        null,
+                        values);
+            }
+            catch (SQLiteConstraintException e) {
+                // app already in the database
+            }
+        }
+    }
+
+    private static void getApps() {
+        SQLiteDatabase db = adh.getReadableDatabase();
+        String[] projection = {
+                AppsDBHelper.AppEntry.COLUMN_NAME_APP_NAME
+        };
+        String sortOrder =
+                AppsDBHelper.AppEntry._ID + " ASC";
+        Cursor c = db.query(
+                AppsDBHelper.AppEntry.TABLE_NAME,  // The table to query
+                projection,                               // The columns to return
+                null,                                // The columns for the WHERE clause
+                null,                                      // The values for the WHERE clause
+                null,                                     // don't group the rows
+                null,                                     // don't filter by row groups
+                sortOrder                                     // The sort order
+        );
+        if(c != null && c.moveToFirst()) {
+            while (c.moveToNext()) {
+                appList.add(c.getString(0));
+            }
+        }
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
+
+    }
+
     private static void createDebugNotification() {
         Random r = new Random();
-        int n = r.nextInt(2);
+        int n = r.nextInt(3);
         //Log.d("TIMER", "Creating new dummy notification");
         NotificationEmitter.createNotification(
                 c,

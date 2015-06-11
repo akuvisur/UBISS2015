@@ -17,6 +17,6 @@ public class ContextAnalyzer {
     public static int analyze(String appName) {
         // returns the notification type for the app 'AppName'
         Random r = new Random();
-        return r.nextInt(2);
+        return r.nextInt(3);
     }
 }
