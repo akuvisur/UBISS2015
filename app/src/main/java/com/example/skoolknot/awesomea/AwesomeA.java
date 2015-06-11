@@ -311,7 +311,7 @@ public class AwesomeA extends Activity {
             }
         }
 
-        
+
         if(c != null && ! c.isClosed())
             c.close();
         return result;
