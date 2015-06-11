@@ -82,15 +82,14 @@ public class AwesomeA extends ActionBarActivity {
 
     public void createNotification(View view) {
         NotificationEmitter.emitDummyNotification(getApplicationContext());
-        Log.d("BUTTON", "click noti");
     }
 
     public void createToast(View view) {
-
+        NotificationEmitter.emitDummyToast(getApplicationContext());
     }
 
     public void createPopup(View view) {
-
+        NotificationEmitter.emitDummmyPopup(getApplicationContext());
     }
 
     // Listener for network events
