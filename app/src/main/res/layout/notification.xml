@@ -4,48 +4,67 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="10dp"
-    android:background="#DAAA"
-    android:weightSum="1">
+    android:background="#dcaaaaaa"
+    android:weightSum="1"
+    style="@style/Base.Theme.AppCompat.Dialog"
+    android:minHeight="80dp"
+    android:minWidth="120dp">
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:background="@color/background_floating_material_dark">
 
         <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:id="@+id/appImage" />
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:id="@+id/appImage"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_height="match_parent"
             android:text="application name"
             android:id="@+id/appName"
-            android:layout_weight="0.90" />
+            android:layout_marginLeft="8dp"
+            style="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_marginTop="12dp"
+            android:elegantTextHeight="true"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.08">
+        android:layout_weight="0.08"
+        android:background="@color/background_floating_material_light">
 
         <ImageButton
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
             android:id="@+id/okButton"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="-4dp" />
+            android:background="#ff9fbdff"
+            android:backgroundTint="#ff7fff65"
+            android:paddingLeft="12dp"
+            android:adjustViewBounds="false"
+            android:alpha="0.7" />
 
         <ImageButton
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
             android:id="@+id/ignoreButton"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="-4dp" />
+            android:background="#ff9fbdff"
+            android:backgroundTint="#ffff5642"
+            android:paddingRight="12dp"
+            android:alpha="0.7" />
     </LinearLayout>
 </LinearLayout>

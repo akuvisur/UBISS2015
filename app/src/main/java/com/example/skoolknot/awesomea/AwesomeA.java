@@ -1,5 +1,6 @@
 package com.example.skoolknot.awesomea;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,6 +9,7 @@ import android.content.IntentFilter;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -30,36 +32,32 @@ import java.util.HashMap;
 import java.util.Random;
 
 
-public class AwesomeA extends ActionBarActivity {
+public class AwesomeA extends Activity {
+    // this seems very very stupid
+    private static Activity thisActivity;
 
     private static ApplicationsObserver appObs;
     public static Context c;
     public static EventDBHelper edh;
+    private static Handler h = new Handler();
 
-    private final int interval = 5000; // 1 Second
+    private final int interval = 15000; // 1 Second
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable(){
         public void run() {
             AwesomeA.createDebugNotification();
+            h.postDelayed(runnable, interval);
         }
     };
 
     public static ArrayList<String> debugApps = new ArrayList<String>(Arrays.asList("MessageApp", "MusicApp", "BrowserApp"));
-
-    private static void createDebugNotification() {
-        Random r = new Random();
-        int n = r.nextInt(2);
-        NotificationEmitter.createNotification(
-                c,
-                debugApps.get(n),
-                NotificationEmitter.generateDummyView(n),
-                NotificationEmitter.generateDummyIcon(n));
-    }
+    public static ArrayList<Integer> debugIcons = new ArrayList<Integer>(Arrays.asList(R.drawable.messageicon, R.drawable.musicicon, R.drawable.browsericon));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_awesome);
+        this.thisActivity = this;
 
         Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_APPLICATIONS, true); // APPLICATIONS
         Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_CALLS, true); // CALLS
@@ -99,28 +97,16 @@ public class AwesomeA extends ActionBarActivity {
 
         sendBroadcast(new Intent(Aware.ACTION_AWARE_REFRESH));
 
-        handler.postAtTime(runnable, System.currentTimeMillis() + interval);
-        handler.postDelayed(runnable, interval);
+        h.postDelayed(runnable, interval);
     }
 
     @Override
     public void onResume() {
         super.onResume();
         edh = new EventDBHelper(getApplicationContext());
+        getData();
         this.c = getApplicationContext();
         Log.d("DB", getApplicationContext().getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
-    }
-
-    public void createNotification(View view) {
-        NotificationEmitter.emitDummyNotification(getApplicationContext());
-    }
-
-    public void createToast(View view) {
-        NotificationEmitter.emitDummyToast(getApplicationContext());
-    }
-
-    public void createPopup(View view) {
-        NotificationEmitter.emitDummmyPopup(getApplicationContext());
     }
 
     private static NotificationListener nfl = new NotificationListener();
@@ -249,6 +235,7 @@ public class AwesomeA extends ActionBarActivity {
         unregisterReceiver(nl);
         unregisterReceiver(al);
         unregisterReceiver(sl);
+        unregisterReceiver(nfl);
 
         Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_APPLICATIONS, false); // APPLICATIONS
         Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_CALLS, false); // CALLS
@@ -288,16 +275,21 @@ public class AwesomeA extends ActionBarActivity {
         Cursor c = db.query(
                 EventDBHelper.EventEntry.TABLE_NAME,  // The table to query
                 projection,                               // The columns to return
-                " * ",                                // The columns for the WHERE clause
+                null,                                // The columns for the WHERE clause
                 null,                                      // The values for the WHERE clause
                 null,                                     // don't group the rows
                 null,                                     // don't filter by row groups
                 null                                     // The sort order
         );
 
+        String row;
         if(c != null && c.moveToFirst()) {
             while (c.moveToNext()) {
-                // do things here
+                row = "";
+                for (int i = 0; i < c.getColumnCount(); i++) {
+                    row += " " + c.getString(i);
+                }
+                Log.d("DB", row);
             }
         }
 
@@ -305,7 +297,8 @@ public class AwesomeA extends ActionBarActivity {
             c.close();
     }
 
-    public static void storeEvent(HashMap<String, Integer> newValues, String appName) {
+    public static void storeEvent(HashMap<String, Integer> newValues, String appName, int response) {
+        Log.d("DB", AwesomeA.c.getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
         SQLiteDatabase db = edh.getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
@@ -315,10 +308,26 @@ public class AwesomeA extends ActionBarActivity {
             values.put(key, newValues.get(key));
         }
         values.put(EventDBHelper.EventEntry.COLUMN_NAME_APP_NAME, appName);
+        values.put(EventDBHelper.EventEntry.COLUMN_NAME_RESPONSE, response);
         // Insert the new row, returning the primary key value of the new row
         db.insert(
                 EventDBHelper.EventEntry.TABLE_NAME,
                 null,
                 values);
+    }
+
+    private static void createDebugNotification() {
+        Random r = new Random();
+        int n = r.nextInt(2);
+        //Log.d("TIMER", "Creating new dummy notification");
+        NotificationEmitter.createNotification(
+                c,
+                debugApps.get(n),
+                NotificationEmitter.generateDummyView(n),
+                NotificationEmitter.generateDummyIcon(n));
+    }
+
+    public static Activity getThis() {
+        return thisActivity;
     }
 }

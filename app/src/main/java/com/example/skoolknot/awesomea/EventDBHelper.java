@@ -28,7 +28,7 @@ public class EventDBHelper extends SQLiteOpenHelper {
                     EventEntry.COLUMN_NAME_SCREEN_LOCKED + NUM_TYPE + COMMA_SEP +
                     EventEntry.COLUMN_NAME_HOUR + NUM_TYPE + COMMA_SEP +
                     EventEntry.COLUMN_NAME_DAY + NUM_TYPE + COMMA_SEP +
-                    EventEntry.COLUMN_NAME_ACTIVITY + NUM_TYPE + COMMA_SEP + ")";
+                    EventEntry.COLUMN_NAME_ACTIVITY + NUM_TYPE + ")";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + EventEntry.TABLE_NAME;
