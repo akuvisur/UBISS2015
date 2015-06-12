@@ -32,6 +32,8 @@ import android.widget.Toast;
 import com.cocosw.undobar.UndoBarController;
 
 import java.nio.channels.DatagramChannel;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by skoolknot on 6/10/15.
@@ -43,8 +45,10 @@ public class NotificationEmitter {
     private static boolean popupHasView = false;
 
     public static void createNotification(Context c, String appName, View v, Drawable appImage) {
-        //int type = ContextAnalyzer.analyze(appName);
         int type = ContextAnalyzer.POPUP;
+        HashMap<String, String> curEvent = DataGatherer.getAllValues();
+        ArrayList<ArrayList<String>> oldValues = AwesomeA.getData();
+        type = ContextAnalyzer.analyze(appName, oldValues, curEvent);
         switch(type) {
             case ContextAnalyzer.IGNORE:
                 Log.d("CREATOR", "Notification ignored");

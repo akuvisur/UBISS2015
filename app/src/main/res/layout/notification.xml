@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="10dp"
-    android:background="#dcaaaaaa"
+    android:background="@android:color/background_light"
     android:weightSum="1"
     style="@style/Base.Theme.AppCompat.Dialog"
     android:minHeight="80dp"
@@ -21,21 +21,23 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:id="@+id/appImage"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="12dp" />
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="application name"
             android:id="@+id/appName"
-            android:layout_marginLeft="8dp"
-            style="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_marginLeft="12dp"
             android:layout_marginTop="12dp"
             android:elegantTextHeight="true"
             android:fontFamily="sans-serif-medium"
-            android:textStyle="bold"
-            android:typeface="serif" />
+            android:textStyle="normal"
+            android:typeface="serif"
+            android:layout_marginRight="12dp"
+            android:textSize="24dp" />
 
     </LinearLayout>
 
@@ -48,23 +50,32 @@
 
         <ImageButton
             android:layout_width="80dp"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:id="@+id/okButton"
-            android:layout_marginLeft="24dp"
-            android:background="#ff9fbdff"
-            android:backgroundTint="#ff7fff65"
-            android:paddingLeft="12dp"
+            android:layout_marginLeft="12dp"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:paddingLeft="8dp"
             android:adjustViewBounds="false"
-            android:alpha="0.7" />
+            android:alpha="0.2"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="12dp"
+            android:paddingTop="4dp"
+            android:paddingRight="8dp"
+            android:paddingBottom="4dp" />
 
         <ImageButton
             android:layout_width="80dp"
-            android:layout_height="60dp"
+            android:layout_height="48dp"
             android:id="@+id/ignoreButton"
-            android:layout_marginLeft="24dp"
+            android:layout_marginLeft="12dp"
             android:background="#ff9fbdff"
-            android:backgroundTint="#ffff5642"
-            android:paddingRight="12dp"
-            android:alpha="0.7" />
+            android:backgroundTint="@android:color/holo_red_light"
+            android:paddingRight="8dp"
+            android:alpha="0.2"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="12dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp" />
     </LinearLayout>
 </LinearLayout>

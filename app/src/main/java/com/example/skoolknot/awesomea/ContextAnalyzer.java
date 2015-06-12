@@ -1,5 +1,7 @@
 package com.example.skoolknot.awesomea;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -14,7 +16,9 @@ public class ContextAnalyzer {
     // cant draw to lock_screen outside of normal notifications
     //public static final int LOCK_SCREEN_MSG = 4;
 
-    public static int analyze(String appName) {
+    // oldValues are the history data from the database
+    // curEvent are the values for the current event
+    public static int analyze(String appName, ArrayList<ArrayList<String>> oldValues, HashMap<String, String> curEvent) {
         // returns the notification type for the app 'AppName'
         Random r = new Random();
         return r.nextInt(3);
