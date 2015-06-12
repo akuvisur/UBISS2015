@@ -54,8 +54,26 @@ public class AwesomeA extends Activity {
         }
     };
 
-    public static ArrayList<String> debugApps = new ArrayList<String>(Arrays.asList("MessageApp", "MusicApp", "BrowserApp"));
-    public static ArrayList<Integer> debugIcons = new ArrayList<Integer>(Arrays.asList(R.drawable.messageicon, R.drawable.musicicon, R.drawable.browsericon));
+    public static ArrayList<String> debugApps = new ArrayList<String>(
+            Arrays.asList(
+                    "Wassup",
+                    "MyTunes",
+                    "WebScape",
+                    "System",
+                    "Calendar",
+                    "Pictogram",
+                    "Maps",
+                    "Happy Birds"));
+    public static ArrayList<Integer> debugIcons = new ArrayList<Integer>(
+            Arrays.asList(
+                    R.drawable.messageicon,
+                    R.drawable.musicicon,
+                    R.drawable.browsericon,
+                    R.drawable.systemicon,
+                    R.drawable.calendaricon,
+                    R.drawable.cameraicon,
+                    R.drawable.mapicon,
+                    R.drawable.birdicon));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -381,7 +399,7 @@ public class AwesomeA extends Activity {
 
     private static void createDebugNotification() {
         Random r = new Random();
-        int n = r.nextInt(3);
+        int n = r.nextInt(8);
         //Log.d("TIMER", "Creating new dummy notification");
         NotificationEmitter.createNotification(
                 c,
