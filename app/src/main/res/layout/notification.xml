@@ -50,32 +50,29 @@
 
         <ImageButton
             android:layout_width="80dp"
-            android:layout_height="48dp"
+            android:layout_height="60dp"
             android:id="@+id/okButton"
             android:layout_marginLeft="12dp"
-            android:backgroundTint="@android:color/holo_green_light"
             android:paddingLeft="8dp"
             android:adjustViewBounds="false"
-            android:alpha="0.2"
             android:layout_marginTop="4dp"
             android:layout_marginRight="12dp"
             android:paddingTop="4dp"
             android:paddingRight="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:background="@color/background_floating_material_light" />
 
         <ImageButton
             android:layout_width="80dp"
-            android:layout_height="48dp"
+            android:layout_height="60dp"
             android:id="@+id/ignoreButton"
             android:layout_marginLeft="12dp"
-            android:background="#ff9fbdff"
-            android:backgroundTint="@android:color/holo_red_light"
             android:paddingRight="8dp"
-            android:alpha="0.2"
             android:layout_marginTop="4dp"
             android:layout_marginRight="12dp"
             android:paddingLeft="8dp"
             android:paddingTop="4dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:background="@color/background_floating_material_light" />
     </LinearLayout>
 </LinearLayout>

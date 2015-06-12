@@ -43,7 +43,7 @@ public class NotificationEmitter {
     private static boolean popupHasView = false;
 
     public static void createNotification(Context c, String appName, View v, Drawable appImage) {
-        int type = ContextAnalyzer.POPUP;
+        int type;
         HashMap<String, String> curEvent = DataGatherer.getAllValues();
         ArrayList<ArrayList<String>> oldValues = AwesomeA.getData();
         type = ContextAnalyzer.analyze(appName, oldValues, curEvent);

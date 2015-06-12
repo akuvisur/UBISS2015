@@ -131,6 +131,7 @@ public class AwesomeA extends Activity {
         this.c = getApplicationContext();
         appList.clear();
         getApps();
+        getThis().moveTaskToBack(true);
         Log.d("DB", getApplicationContext().getDatabasePath(EventDBHelper.DATABASE_NAME).toString());
     }
 
