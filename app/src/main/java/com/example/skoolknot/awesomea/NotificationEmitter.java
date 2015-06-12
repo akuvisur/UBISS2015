@@ -29,8 +29,6 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cocosw.undobar.UndoBarController;
-
 import java.nio.channels.DatagramChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -74,15 +72,6 @@ public class NotificationEmitter {
                 break;
             */
         }
-    }
-
-    private static void emitToast(Context c, String appName, Drawable appImage, View v) {
-        UndoBarController.UndoBar ub = new UndoBarController.UndoBar(AwesomeA.getThis());
-
-        //UndoBarController ubc = new UndoBarController(v, AwesomeA.getThis());
-        ub.duration(5000);
-        ub.message("This is an undobar");
-        ub.show();
     }
 
     private static void emitLockMsg(Context c, String appName, Drawable appImage, View v) {
@@ -220,11 +209,4 @@ public class NotificationEmitter {
                 AwesomeA.storeEvent(DataGatherer.getAllValues(), intent.getStringExtra("appname"), 1);
         }
     }
-
-    public class UndoList implements UndoBarController.UndoListener {
-        public void onUndo(Parcelable token) {
-            Log.d("UNDO", "clicked somewhere??");
-        }
-    }
-
 }
