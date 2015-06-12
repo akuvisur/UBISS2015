@@ -105,7 +105,7 @@ public class NotificationEmitter {
                     popupHasView = false;
                 }
             }
-        }, 10000);
+        }, AwesomeA.interval * 2);
     }
 
     private static void emitNotification(Context c, String appName, Drawable appImage, View v) {

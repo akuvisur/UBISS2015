@@ -45,7 +45,7 @@ public class AwesomeA extends Activity {
     public static AppsDBHelper adh;
     private static Handler h = new Handler();
 
-    private final int interval = 15000; // 1 Second
+    public static final int interval = 5000;
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable(){
         public void run() {

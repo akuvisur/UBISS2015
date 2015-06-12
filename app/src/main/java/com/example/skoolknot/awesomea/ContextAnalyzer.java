@@ -22,5 +22,6 @@ public class ContextAnalyzer {
         // returns the notification type for the app 'AppName'
         Random r = new Random();
         return r.nextInt(3);
+
     }
 }
